@@ -3,6 +3,8 @@ import { FaBars, FaTimes, FaGithub, FaLinkedin, FaFacebook,  } from "react-icons
 import { HiOutlineMail } from "react-icons/hi";
 import {BsFillPersonLinesFill} from 'react-icons/bs'
 import Logo from "../assets/logo1.png";
+import { Link } from "react-scroll";
+import CV from '../assets/CV-DiegoNGonzalez.pdf'
 
 const Navbar = () => {
     const [ nav, setNav ] = useState(false);
@@ -18,30 +20,100 @@ const Navbar = () => {
             </div>
             {/* menu */}
             <ul className='hidden md:flex'>
-                <li>Home</li>
-                <li>About</li>
-                <li>Skills</li>
-                <li>Work</li>
-                <li>Contact</li>
+                <li>
+                    <Link to='home' smooth={true} duration={500}>
+                        Home
+                    </Link>
+                </li>
+                <li>
+                    <Link to='about' smooth={true} duration={500}>
+                        About
+                    </Link>
+                </li>
+                <li>
+                    <Link to='skills' smooth={true} duration={500}>
+                        Skills
+                    </Link>
+                </li>
+                <li>
+                    <Link to='work' smooth={true} duration={500}>
+                        Work
+                    </Link>
+                </li>
+                <li>
+                    <Link to='contact' smooth={true} duration={500}>
+                        Contact
+                    </Link>
+                </li>
             </ul>
 
-            {/* hamburger menu */}
+            {/* Hamburger */}
             <div onClick={handleClick} className='md:hidden z-10'>
                 {!nav ? <FaBars /> : <FaTimes />}
             </div>
-            {/* mobile menu */}
+
+            {/* Mobile menu */}
             <ul
                 className={
                     !nav
                         ? "hidden"
-                        : "absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center "
+                        : "absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center"
                 }
             >
-                <li className='py-6 text-4xl'>Home</li>
-                <li className='py-6 text-4xl'>About</li>
-                <li className='py-6 text-4xl'>Skills</li>
-                <li className='py-6 text-4xl'>Work</li>
-                <li className='py-6 text-4xl'>Contact</li>
+                <li className='py-6 text-4xl'>
+                    <Link
+                        onClick={handleClick}
+                        to='home'
+                        smooth={true}
+                        duration={500}
+                    >
+                        Home
+                    </Link>
+                </li>
+                <li className='py-6 text-4xl'>
+                    {" "}
+                    <Link
+                        onClick={handleClick}
+                        to='about'
+                        smooth={true}
+                        duration={500}
+                    >
+                        About
+                    </Link>
+                </li>
+                <li className='py-6 text-4xl'>
+                    {" "}
+                    <Link
+                        onClick={handleClick}
+                        to='skills'
+                        smooth={true}
+                        duration={500}
+                    >
+                        Skills
+                    </Link>
+                </li>
+                <li className='py-6 text-4xl'>
+                    {" "}
+                    <Link
+                        onClick={handleClick}
+                        to='work'
+                        smooth={true}
+                        duration={500}
+                    >
+                        Work
+                    </Link>
+                </li>
+                <li className='py-6 text-4xl'>
+                    {" "}
+                    <Link
+                        onClick={handleClick}
+                        to='contact'
+                        smooth={true}
+                        duration={500}
+                    >
+                        Contact
+                    </Link>
+                </li>
             </ul>
 
             {/* social icons */}
@@ -59,7 +131,8 @@ const Navbar = () => {
                     <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333]'>
                         <a
                             className='flex justify-between items-center w-full text-gray-300'
-                            href='https://github.com/DiegoNGonzalez' target='_blank'
+                            href='https://github.com/DiegoNGonzalez'
+                            target='_blank'
                         >
                             GitHub <FaGithub size={30} />
                         </a>
@@ -67,7 +140,8 @@ const Navbar = () => {
                     <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#6cb197]'>
                         <a
                             className='flex justify-between items-center w-full text-gray-300'
-                            href='mailto:diegonzalezdev@gmail.com' target='_blank'
+                            href='mailto:diegonzalezdev@gmail.com'
+                            target='_blank'
                         >
                             Email <HiOutlineMail size={30} />
                         </a>
@@ -75,9 +149,10 @@ const Navbar = () => {
                     <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#565f69]'>
                         <a
                             className='flex justify-between items-center w-full text-gray-300'
-                            href='/'
+                            href={CV}
+                            download='CV-DiegoNGonzalez'
                         >
-                            Resume <BsFillPersonLinesFill size={30} />
+                            CV/Resume<BsFillPersonLinesFill size={30} />
                         </a>
                     </li>
                 </ul>
