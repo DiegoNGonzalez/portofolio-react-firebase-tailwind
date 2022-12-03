@@ -1,5 +1,7 @@
 import WorkIm from "../assets/projects/workImg.jpeg";
 import RealEst from "../assets/projects/realestate.jpg";
+import Amoron from "../assets/projects/amoro.png"
+import Command from "../assets/projects/command.png";
 
 export const data = [
     {
@@ -18,10 +20,10 @@ export const data = [
     },
     {
         id: 3,
-        name: "React JS Application",
-        image: WorkIm,
-        github: "",
-        live: "",
+        name: "Js E-Commerce",
+        image: Amoron,
+        github: "https://github.com/DiegoNGonzalez/carritoDeComprasJs",
+        live: "https://reto005-winterhack.web.app/",
     },
     {
         id: 4,
@@ -32,10 +34,10 @@ export const data = [
     },
     {
         id: 5,
-        name: "React JS Application",
-        image: WorkIm,
-        github: "",
-        live: "",
+        name: "Podcast webpage",
+        image: Command,
+        github: "https://github.com/DiegoNGonzalez/tpoCodoACodo",
+        live: "https://tpocodoacodo.web.app/",
     },
     {
         id: 6,
